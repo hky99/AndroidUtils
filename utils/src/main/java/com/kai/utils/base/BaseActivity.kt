@@ -1,5 +1,6 @@
 package com.kai.utils.base
 
+import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
 /**
@@ -9,6 +10,17 @@ import androidx.appcompat.app.AppCompatActivity
  * @CreateDate 2019/12/27 16:25
  * @Version 1.0
  */
-class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (getLayoutResID() != 0){
+            setContentView(getLayoutResID())
+        }
+        init()
+    }
+
+    abstract fun getLayoutResID():Int
+
+    abstract fun init()
 }
