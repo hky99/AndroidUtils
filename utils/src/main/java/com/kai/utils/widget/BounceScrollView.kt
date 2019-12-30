@@ -1,4 +1,4 @@
-package com.kai.utils.ui
+package com.kai.utils.widget
 
 import android.content.Context
 import android.graphics.Rect
